@@ -890,7 +890,9 @@ a {
   /*flex-shrink: 0;*/
   height: 100%;
 }
+.cart-overlay{}
 .cart .cart__title{
+  width: 100%;
   position: fixed;
   padding: 10px;
   height: 50px;
