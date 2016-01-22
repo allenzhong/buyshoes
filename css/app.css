@@ -1,0 +1,483 @@
+@import "normalize.css";
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body, div, span, a, img, h1, h2, h3, h4, h5 {
+  box-sizing: border-box;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-shrink: 0;
+  align-content: flex-start;
+
+  border: 0 solid black;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  position: relative;
+}
+
+body {
+  background-color: #F7F8FA;
+  /*background-color: #FFFFFF;*/
+  color: #202020;
+  font-family: "Avenir Next", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 100;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 100;
+}
+
+p {
+  font-size: 16px;
+}
+
+a {
+  font-weight: 400;
+}
+
+/*a:hover {
+  font-weight: 400;
+  color: #DADADA;
+  text-decoration: none;
+}
+*/
+.site {
+  /*height: 100vh;*/
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+.site .site__main{
+  align-items: stretch;
+  flex-direction: row;
+  width:70%;
+}
+
+.site .site__main .site__left-sidebar{
+  position: fixed;
+  flex-grow: 0;
+  flex-basis: auto;
+  width: 170px;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+
+
+.site__left-sidebar h2{
+  justify-content: center;
+  color: #515151;
+  font-size: 48px;
+  font-family: "AvenirNext-DemiBold";
+}
+.site .site__main .site__content{
+  margin-left: 170px;
+  width: auto;
+  flex-basis: 0;
+  flex-grow: 1;
+  /*background-color: #e2e2e2;*/
+}
+
+.site .site__main .site__content .products{
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .site .site__main {
+    align-items: stretch;
+    flex-direction: row;
+    width:100%;
+  }
+  .site .site__main .site__left-sidebar{
+    display: none;
+    /*position: fixed;*/
+    flex-grow: 0;
+    flex-basis: auto;
+    width: 0px;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .site .site__main .site__content{
+    margin-left: 0px;
+    width: 100%;
+    flex-basis: 0;
+    flex-grow: 1;
+
+  }
+}
+
+.product{
+  width: 50%;
+  /*height: 250px;*/
+  /*background-color: #cccccc;*/
+  padding: 20px 10px 20px 5px;
+  margin-bottom: 40px;
+  flex-direction: column;
+  align-items: stretch;
+
+}
+
+@media (max-width: 950px) {
+  .product{
+    width: 78%;
+    /*height: 250px;*/
+    /*background-color: #cccccc;*/
+    padding: 20px 10px 20px 5px;
+    margin-bottom: 40px;
+    flex-direction: column;
+    align-items: stretch;
+
+  }
+}
+@media (max-width: 600px) {
+  .product{
+    width: 100%;
+    /*height: 250px;*/
+    /*background-color: #cccccc;*/
+    padding: 20px 10px 20px 5px;
+    margin-bottom: 40px;
+    flex-direction: column;
+    align-items: stretch;
+
+  }
+  .product__img{
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+.product__display{
+  border: solid 6px #D8D8D8;
+  background-color: white;
+  align-items: center;
+}
+.product__img{
+  width: 70%;
+  margin-top: 20px;
+}
+.product__add{
+  flex-direction: row;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-color: #d8d8d8;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0 20px 0;
+}
+.product__add__icon{
+  width: 35px;
+  height: 35px;
+}
+.product__price{
+  position: absolute;
+  top: 20px;
+  right:20px;
+  transform: translate(-50%，0);
+  font-size: 24px;
+  color: black;
+  font-family: "AvenirNext-DemiBold";
+}
+.product__description{
+  position: absolute;
+  flex-direction: row;
+  flex-shrink: 0;
+  padding: 10px 20px 0px 0px;
+  width: 100%;
+}
+.product__name{
+  top:0;
+  left:0;
+  justify-content: center;
+  flex-grow: 8;
+  flex-basis: 0;
+  padding: 0px 20px 0px 0px;
+}
+.product__heart{
+  top:0;
+  right:0;
+  flex-grow: 1;
+  flex-basis: 0;
+  justify-content: center;
+  align-self: flex-start;
+  transform: translate(-50%,-0%);
+}
+.site .site__right-sidebar{
+  position: fixed;
+  left: 70%;
+  width: 30%;
+  flex-grow: 3;
+  flex-basis: 0;
+  height: 100%;
+  background-color: rgb(255,255,1);
+  flex-direction: column;
+}
+
+@media (max-width: 950px) {
+  .site .site__right-sidebar{
+    position: fixed;
+    left: 60%;
+    width: 40%;
+    flex-grow: 3;
+    flex-basis: 0;
+    height: 100%;
+    background-color: rgb(255,255,1);
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .site__right-sidebar{
+    /*opacity: 1;*/
+    display: none;
+    position: fixed;
+    left: 20%;
+    width: 80%;
+    flex-grow: 3;
+    flex-basis: 0;
+    height: 100%;
+    background-color: rgb(255,255,1);
+    flex-direction: column;
+    height: 100%;
+  }
+  .site__right-sidebar--display{
+    /*opacity: 1;*/
+    display: block;
+  }
+}
+.site .site__right-sidebar .cart{
+  flex-grow: 4;
+  flex-basis: 0;
+  background: #c4ccda;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.cart .cart__title{
+  position: fixed;
+  padding: 10px;
+  height: 50px;
+  background: #c4ccda;
+}
+.cart__content{
+  position: relative;
+  top: 50px;
+  flex-direction: column;
+  /*height: 100%;*/
+  /*overflow: auto;*/
+}
+
+.cart-item {
+  height: 110px;
+  margin-bottom: 20px;
+  background: #c4ccda;
+  flex-direction: column;
+}
+
+.cart-item__top-part{
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.cart-item__image{
+  justify-content: flex-start;
+  flex-grow: 1;
+  flex-basis: 0;
+  flex-shrink: 0;
+  align-self: center;
+  justify-content: center;
+  padding: 15px 15px 15px 15px;
+  width:33%;
+}
+.cart-item__image img{
+  width: 100%;
+  border: solid 2px #D8D8D8;
+}
+.cart-item__top-part__middle{
+  flex-grow: 2;
+  flex-basis: 0;
+}
+.cart-item__trash{
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.cart-item__qty{
+  align-self: flex-start;
+  flex-direction: row;
+  width:33%;
+  align-items: center;
+}
+
+.adjust-qty{
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0px;
+}
+
+.adjust-qty__button{
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: #F7F8FA;
+  text-align: center;
+  margin: 0px 5px 0px 5px;
+}
+
+.adjust-qty__number{
+  justify-content: center;
+}
+
+.site .site__right-sidebar .checkout{
+  flex-grow: 2 ;
+  flex-basis: 0;
+  /*height: 300px;*/
+  flex-direction: column;
+  padding: 0px 30px 30px 30px;
+  background: #c4ccda;
+
+}
+.checkout__error{
+  font-size: 18px;
+  font-family: "AvenirNext-DemiBold";
+  color: #DC1A00;
+}
+.checkout input{
+  align-self: stretch;
+
+}
+.checkout__item {
+  flex-direction: row;
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.checkout__label{
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.checkout__label--discount{
+  font-size: 24px;
+  color: black;
+
+}
+.checkout__label--subtotal{
+  font-size: 24px;
+  color: black;
+  font-family: "AvenirNext-DemiBold";
+}
+.checkout__amount{
+  flex-grow: 1;
+  flex-basis: 0;
+  align-items: flex-end;
+}
+.checkout__amount--discount{
+
+}
+.checkout__amount--strikeout{
+  text-decoration: line-through;
+}
+.checkout__amount--saving{
+  color: red;
+  font-family: "AvenirNext-DemiBold";
+}
+.checkout__button{
+  align-self: center;
+  flex-direction: row;
+  background-color: #80A590;
+  text-decoration: none;
+  width: 80%;
+  height: 66px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.checkout__button--img{
+  flex-grow: 1;
+  flex-basis: 0;
+  align-items: center;
+  justify-content: center;
+}
+.checkout__button--title{
+  justify-content: center;
+  flex-grow: 3;
+  flex-basis: 0;
+  text-align: center;
+  color: #F7F8FA;
+  font-size: 24px;
+}
+
+.site__right-sidebar-toggle {
+  /* styles for when the sidebar is hidden */
+  display: none;
+}
+
+@media (max-width: 600px){
+  .site__right-sidebar-toggle {
+    /* styles for when the sidebar is hidden */
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #2D3851;
+    width: 20%;
+    height: 50px;
+  }
+
+
+  body.js-show-right-sidebar .site__right-sidebar-toggle {
+    position: fixed;
+    left: 0px;
+    bottom: 10px;
+  }
+  body.js-show-right-sidebar .site__right-sidebar{
+    /*opacity: 1;*/
+    display: block;
+    /*position: fixed;*/
+    left: 20%;
+    width: 80%;
+    /*flex-grow: 3;*/
+    /*flex-basis: 0;*/
+    /*height: 100%;*/
+    background-color: rgb(255,255,1);
+    flex-direction: column;
+    /*z-index: 999;*/
+  }
+
+}
+
+
