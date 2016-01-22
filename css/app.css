@@ -272,11 +272,12 @@ a {
   }
 }
 .site .site__right-sidebar .cart{
-  flex-grow: 4;
+  flex-grow: 5;
   flex-basis: 0;
   background: #c4ccda;
   flex-direction: column;
-  flex-shrink: 0;
+  /*flex-shrink: 0;*/
+  height: 100%;
 }
 .cart .cart__title{
   position: fixed;
@@ -285,18 +286,19 @@ a {
   background: #c4ccda;
 }
 .cart__content{
-  position: relative;
+  /*position: relative;*/
   top: 50px;
   flex-direction: column;
-  /*height: 100%;*/
+  height: 100%;
   /*overflow: auto;*/
+  overflow:scroll;
 }
 
 .cart-item {
-  height: 110px;
-  margin-bottom: 20px;
+  height: 100px;
+  margin-bottom: 0px;
   background: #c4ccda;
-  flex-direction: column;
+  /*flex-direction: column;*/
 }
 
 .cart-item__top-part{
@@ -359,13 +361,13 @@ a {
 }
 
 .site .site__right-sidebar .checkout{
-  flex-grow: 2 ;
+  flex-grow: 3;
   flex-basis: 0;
   /*height: 300px;*/
   flex-direction: column;
-  padding: 0px 30px 30px 30px;
+  padding: 0px 30px 0px 30px;
   background: #c4ccda;
-
+  align-self: stretch;
 }
 .checkout__error{
   font-size: 18px;
@@ -374,11 +376,10 @@ a {
 }
 .checkout input{
   align-self: stretch;
-
 }
 .checkout__item {
   flex-direction: row;
-  margin-top: 20px;
+  margin-top: 5px;
   font-size: 24px;
 }
 
@@ -389,7 +390,6 @@ a {
 .checkout__label--discount{
   font-size: 24px;
   color: black;
-
 }
 .checkout__label--subtotal{
   font-size: 24px;
@@ -417,11 +417,11 @@ a {
   background-color: #80A590;
   text-decoration: none;
   width: 80%;
-  height: 66px;
+  height: 45px;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .checkout__button--img{
   flex-grow: 1;
@@ -458,6 +458,13 @@ a {
     height: 50px;
   }
 
+  body.js-show-right-sidebar .cart__content{
+    /*position: relative;*/
+    top: 50px;
+    flex-direction: column;
+    height: 50%;
+    overflow: auto;
+  }
 
   body.js-show-right-sidebar .site__right-sidebar-toggle {
     position: fixed;
@@ -465,19 +472,24 @@ a {
     bottom: 10px;
   }
   body.js-show-right-sidebar .site__right-sidebar{
-    /*opacity: 1;*/
     display: block;
-    /*position: fixed;*/
     left: 20%;
     width: 80%;
-    /*flex-grow: 3;*/
-    /*flex-basis: 0;*/
-    /*height: 100%;*/
     background-color: rgb(255,255,1);
     flex-direction: column;
-    /*z-index: 999;*/
   }
-
+  body.js-show-right-sidebar .site .site__right-sidebar .checkout{
+    /*display: block;*/
+    position: absolute;
+    /*height: 100%;*/
+    width: 100%;
+    bottom: 0px;
+    right: 0px;
+    flex-direction: column;
+    padding: 0px 30px 0px 30px;
+    background: #c4ccda;
+    align-self: flex-start;
+  }
 }
 
 
